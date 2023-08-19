@@ -52,7 +52,7 @@
                     fill-rule="nonzero"
                   />
                 </svg>
-                <div class="cart-qty-display">3</div>
+                <div class="cart-qty-display hide-modal">3</div>
               </div>
               <div class="profile">
                 <div class="avatar-container">
@@ -75,7 +75,8 @@
               />
             </div>
             <div class="sub-imgs">
-              <div class="prod-thumb-one active-slide">
+              <div class="prod-thumb prod-thumb-one active-slide">
+                <div class="thumb-overlay"></div>
                 <img
                   src="./images/image-product-1-thumbnail.jpg"
                   alt=""
@@ -83,7 +84,8 @@
                   id="prod-thumb-one"
                 />
               </div>
-              <div class="prod-thumb-two">
+              <div class="prod-thumb prod-thumb-two">
+                <div class="thumb-overlay"></div>
                 <img
                   src="./images/image-product-2-thumbnail.jpg"
                   alt=""
@@ -91,7 +93,8 @@
                   id="prod-thumb-two"
                 />
               </div>
-              <div class="prod-thumb-three">
+              <div class="prod-thumb prod-thumb-three">
+                <div class="thumb-overlay"></div>
                 <img
                   src="./images/image-product-3-thumbnail.jpg"
                   alt=""
@@ -99,7 +102,8 @@
                   id="prod-thumb-three"
                 />
               </div>
-              <div class="prod-thumb-four">
+              <div class="prod-thumb prod-thumb-four">
+                <div class="thumb-overlay"></div>
                 <img
                   src="./images/image-product-4-thumbnail.jpg"
                   alt=""
@@ -159,7 +163,9 @@
       </div>
     </div>
 
-    <div class="cart-box">
+    <!-- cart modal -->
+
+    <div class="cart-box hide-modal">
       <div class="cart-head">
         <h4 class="cart-header">Cart</h4>
       </div>
@@ -186,11 +192,112 @@
       </div>
     </div>
 
+    <!-- product modal -->
+
+    <div class="product-modal hide-modal">
+      <div class="overlay"></div>
+      <div class="product-modal-container">
+        <svg
+          width="14"
+          height="15"
+          xmlns="http://www.w3.org/2000/svg"
+          class="close-modal"
+        >
+          <path
+            d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+            fill-rule="evenodd"
+          ></path>
+        </svg>
+        <div class="left-container">
+          <div class="modal-main-img">
+            <div class="prev-container">
+              <svg
+                width="12"
+                height="18"
+                xmlns="http://www.w3.org/2000/svg"
+                class="prev"
+              >
+                <path
+                  d="M11 1 3 9l8 8"
+                  stroke-width="3"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <div class="main-img modal-main">
+              <img
+                src="./images/image-product-1.jpg"
+                alt=""
+                class="main-img-display"
+              />
+            </div>
+            <div class="next-container">
+              <svg
+                width="13"
+                height="18"
+                xmlns="http://www.w3.org/2000/svg"
+                class="next"
+              >
+                <path
+                  d="m2 1 8 8-8 8"
+                  stroke-width="3"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="sub-imgs sub-modal-imgs">
+            <div class="prod-thumb prod-thumb-one active-slide">
+              <div class="thumb-overlay"></div>
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt=""
+                class="sub-img active"
+                id="prod-thumb-one"
+              />
+            </div>
+            <div class="prod-thumb prod-thumb-two">
+              <div class="thumb-overlay"></div>
+              <img
+                src="./images/image-product-2-thumbnail.jpg"
+                alt=""
+                class="sub-img"
+                id="prod-thumb-two"
+              />
+            </div>
+            <div class="prod-thumb prod-thumb-three">
+              <div class="thumb-overlay"></div>
+              <img
+                src="./images/image-product-3-thumbnail.jpg"
+                alt=""
+                class="sub-img"
+                id="prod-thumb-three"
+              />
+            </div>
+            <div class="prod-thumb prod-thumb-four">
+              <div class="thumb-overlay"></div>
+              <img
+                src="./images/image-product-4-thumbnail.jpg"
+                alt=""
+                class="sub-img"
+                id="prod-thumb-four"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- <div class="test">
-      <svg>
-        <img src="./images/icon-cart-white.svg" alt="" class="i-img" />
-      </svg>
+      <div class="test-div">ordinary text</div>
+      <div class="test-img">
+        <img src="./images/image-avatar.png" alt="" class="i-img" />
+      </div>
       <p class="inner-test">Test</p>
+    </div> -->
+
+    <!-- <div class="test">
+      <img src="./images/icon-close.svg" alt="" class="test-img" />
     </div> -->
   </body>
 </html>
