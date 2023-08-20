@@ -9,9 +9,11 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="../images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <script src="./style.js" defer></script>
 
     <title>Frontend Mentor | E-commerce product page</title>
 
@@ -30,7 +32,7 @@
     <div class="container">
       <header>
         <nav>
-          <div class="logo"><img src="./images/logo.svg" alt="" /></div>
+          <div class="logo"><img src="../images/logo.svg" alt="" /></div>
           <div class="navbar">
             <ul class="nav-items">
               <li class="nav-item"><a href="#">Collections</a></li>
@@ -56,7 +58,7 @@
               </div>
               <div class="profile">
                 <div class="avatar-container">
-                  <img class="avatar" src="./images/image-avatar.png" alt="" />
+                  <img class="avatar" src="../images/image-avatar.png" alt="" />
                 </div>
               </div>
             </div>
@@ -69,7 +71,7 @@
           <div class="left-container">
             <div class="main-img">
               <img
-                src="./images/image-product-1.jpg"
+                src="../images/image-product-1.jpg"
                 alt=""
                 class="main-img-display"
               />
@@ -78,7 +80,7 @@
               <div class="prod-thumb prod-thumb-one active-slide">
                 <div class="thumb-overlay"></div>
                 <img
-                  src="./images/image-product-1-thumbnail.jpg"
+                  src="../images/image-product-1-thumbnail.jpg"
                   alt=""
                   class="sub-img active"
                   id="prod-thumb-one"
@@ -87,7 +89,7 @@
               <div class="prod-thumb prod-thumb-two">
                 <div class="thumb-overlay"></div>
                 <img
-                  src="./images/image-product-2-thumbnail.jpg"
+                  src="../images/image-product-2-thumbnail.jpg"
                   alt=""
                   class="sub-img"
                   id="prod-thumb-two"
@@ -96,7 +98,7 @@
               <div class="prod-thumb prod-thumb-three">
                 <div class="thumb-overlay"></div>
                 <img
-                  src="./images/image-product-3-thumbnail.jpg"
+                  src="../images/image-product-3-thumbnail.jpg"
                   alt=""
                   class="sub-img"
                   id="prod-thumb-three"
@@ -105,7 +107,7 @@
               <div class="prod-thumb prod-thumb-four">
                 <div class="thumb-overlay"></div>
                 <img
-                  src="./images/image-product-4-thumbnail.jpg"
+                  src="../images/image-product-4-thumbnail.jpg"
                   alt=""
                   class="sub-img"
                   id="prod-thumb-four"
@@ -132,9 +134,9 @@
             </div>
             <div class="carting">
               <div class="cart-qty">
-                <img src="./images/icon-minus.svg" alt="" id="minus" />
+                <img src="../images/icon-minus.svg" alt="" id="minus" />
                 <div class="qty">0</div>
-                <img src="./images/icon-plus.svg" alt="" id="plus" />
+                <img src="../images/icon-plus.svg" alt="" id="plus" />
               </div>
               <div class="add-to-cart">
                 <svg
@@ -171,8 +173,11 @@
       </div>
       <div class="cart-items">
         <div class="cart-item">
+          <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <!-- <div class="cart-item">
           <img
-            src="./images/image-product-1-thumbnail.jpg"
+            src="../images/image-product-1-thumbnail.jpg"
             alt=""
             class="cart-img"
           />
@@ -186,9 +191,9 @@
               <p class="cart-item-total">$375</p>
             </div>
           </div>
-          <img src="./images/icon-delete.svg" alt="" class="del-cart-item" />
-        </div>
-        <p class="checkout"><a href="#">Checkout</a></p>
+          <img src="../images/icon-delete.svg" alt="" class="del-cart-item" />
+        </div> -->
+        <p class="checkout hide-modal"><a href="#">Checkout</a></p>
       </div>
     </div>
 
@@ -226,7 +231,7 @@
             </div>
             <div class="main-img modal-main">
               <img
-                src="./images/image-product-1.jpg"
+                src="../images/image-product-1.jpg"
                 alt=""
                 class="main-img-display"
               />
@@ -250,7 +255,7 @@
             <div class="prod-thumb prod-thumb-one active-slide">
               <div class="thumb-overlay"></div>
               <img
-                src="./images/image-product-1-thumbnail.jpg"
+                src="../images/image-product-1-thumbnail.jpg"
                 alt=""
                 class="sub-img active"
                 id="prod-thumb-one"
@@ -259,7 +264,7 @@
             <div class="prod-thumb prod-thumb-two">
               <div class="thumb-overlay"></div>
               <img
-                src="./images/image-product-2-thumbnail.jpg"
+                src="../images/image-product-2-thumbnail.jpg"
                 alt=""
                 class="sub-img"
                 id="prod-thumb-two"
@@ -268,7 +273,7 @@
             <div class="prod-thumb prod-thumb-three">
               <div class="thumb-overlay"></div>
               <img
-                src="./images/image-product-3-thumbnail.jpg"
+                src="../images/image-product-3-thumbnail.jpg"
                 alt=""
                 class="sub-img"
                 id="prod-thumb-three"
@@ -277,7 +282,7 @@
             <div class="prod-thumb prod-thumb-four">
               <div class="thumb-overlay"></div>
               <img
-                src="./images/image-product-4-thumbnail.jpg"
+                src="../images/image-product-4-thumbnail.jpg"
                 alt=""
                 class="sub-img"
                 id="prod-thumb-four"

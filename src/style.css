@@ -138,8 +138,6 @@ main{
     justify-content: center;
     width: 100%;
 }
-/* .right{
-} */
 
 .right-container{
     width: 80%;   
@@ -162,11 +160,6 @@ main{
     justify-content: center;
     gap: .6rem;
 }
-
-/* .main-sub-imgs div{
-    width: 15%;
-    height: 100px;
-} */
 
 .prod-thumb{
     width: 15%;
@@ -301,6 +294,7 @@ main{
 .check-cart{
     width: 1.4rem;
     fill: #a8afbf;
+    cursor: pointer;
 }
 
 
@@ -314,12 +308,12 @@ main{
     top: 10%;
     left: 70%;
     width: 22rem;
-    height: 15rem;
+    min-height: 15rem;
     box-shadow: 0 8px 30px -16px #4a4a4a;
     background-color: #fff;
     border-radius: .4rem;
     font-weight: 500;
-    color: #807e7e;
+    /* outline: 1px solid green; */
 }
 
 .hide-modal{
@@ -327,23 +321,36 @@ main{
 }
 
 .cart-head{
-    padding: 1.2rem 0;
+    height: 20%;
     border-bottom:  2px solid #eee;
+    /* outline: 1px solid blue; */
 }
 
 .cart-header{    
-    width: 85%;
-    margin: auto;
+    padding: 1.2rem 1.4rem;
     color: #000;
-    /* outline: 1px solid red; */
 }
 
+.cart-items{
+    color: #807e7e;
+    /* outline: 1px solid red; */
+    min-height: 12rem;
+    position: relative;
+    /* height: 100%; */
+}
+
+.empty-cart{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* outline: 1px solid red; */
+}
 .cart-item{
     display: flex;
     justify-content: space-between;
-    width: 85%;
-    margin: 1.4rem auto;
-    /* outline: 1px solid red; */
+    padding: 1.2rem 1.4rem;
+    /* outline: 1px solid ; */
 }
 
 .cart-img{
@@ -369,7 +376,7 @@ main{
     text-align: center;
     background-color: #FF7D1A;
     width: 85%;
-    margin: auto;
+    margin: 1rem auto;
     padding: 1rem 0;
     border-radius: .5rem;
     font-size: .9em;
@@ -377,7 +384,6 @@ main{
     color: #fff;
     cursor: pointer;
 }
-
 
 
 
@@ -406,11 +412,6 @@ main{
     height: 80%;
     margin: auto;
 }
-
-/* .sub-modal-imgs .sub-img{
-    height: 90%;
-    width: 90%;
-} */
 
 .overlay{
     position: absolute;
@@ -472,10 +473,3 @@ main{
     margin-left: 5px;
 }
 
-
-/* .test::before{
-    content: '';
-    height: 200px;
-    width: 200px;
-    background-color: #4a4a4a;
-} */
