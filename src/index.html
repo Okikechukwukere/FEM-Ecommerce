@@ -11,9 +11,10 @@
       sizes="32x32"
       href="../images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link rel="stylesheet" href="./style-two.css" />
 
-    <script src="./style.js" defer></script>
+    <script src="./script.js" defer></script>
 
     <title>Frontend Mentor | E-commerce product page</title>
 
@@ -32,8 +33,19 @@
     <div class="container">
       <header>
         <nav>
-          <div class="logo"><img src="../images/logo.svg" alt="" /></div>
+          <div class="menu-logo">
+            <div class="menu">
+              <div class="close-menu hide">
+                <img src="../images/icon-close.svg" alt="" />
+              </div>
+              <div class="open-menu">
+                <img src="../images/icon-menu.svg" alt="" />
+              </div>
+            </div>
+            <div class="logo"><img src="../images/logo.svg" alt="" /></div>
+          </div>
           <div class="navbar">
+            <div class="menu-overlay hide"></div>
             <ul class="nav-items">
               <li class="nav-item"><a href="#">Collections</a></li>
               <li class="nav-item"><a href="#">Men</a></li>
@@ -69,48 +81,103 @@
       <main>
         <section class="left">
           <div class="left-container">
-            <div class="main-img">
-              <img
-                src="../images/image-product-1.jpg"
-                alt=""
-                class="main-img-display"
-              />
+            <div class="icons-imgs">
+              <div class="prev-container">
+                <svg
+                  width="12"
+                  height="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="prev"
+                >
+                  <path
+                    d="M11 1 3 9l8 8"
+                    stroke-width="3"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <div class="main-imgs">
+                <div class="main-img main-active">
+                  <img
+                    src="../images/image-product-1.jpg"
+                    alt=""
+                    class="main-img-display"
+                  />
+                  <img
+                    src="../images/image-product-2.jpg"
+                    alt=""
+                    class="main-img-display"
+                  />
+                  <img
+                    src="../images/image-product-3.jpg"
+                    alt=""
+                    class="main-img-display"
+                  />
+                  <img
+                    src="../images/image-product-4.jpg"
+                    alt=""
+                    class="main-img-display"
+                  />
+                </div>
+              </div>
+              <div class="next-container">
+                <svg
+                  width="13"
+                  height="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="next"
+                >
+                  <path
+                    d="m2 1 8 8-8 8"
+                    stroke-width="3"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
             </div>
             <div class="sub-imgs">
-              <div class="prod-thumb prod-thumb-one active-slide">
+              <div
+                class="prod-thumb prod-thumb-one active-slide"
+                data-number="one"
+                id="one"
+              >
                 <div class="thumb-overlay"></div>
                 <img
                   src="../images/image-product-1-thumbnail.jpg"
                   alt=""
                   class="sub-img active"
-                  id="prod-thumb-one"
                 />
               </div>
-              <div class="prod-thumb prod-thumb-two">
+              <div class="prod-thumb prod-thumb-two" data-number="two" id="two">
                 <div class="thumb-overlay"></div>
                 <img
                   src="../images/image-product-2-thumbnail.jpg"
                   alt=""
                   class="sub-img"
-                  id="prod-thumb-two"
                 />
               </div>
-              <div class="prod-thumb prod-thumb-three">
+              <div
+                class="prod-thumb prod-thumb-three"
+                data-number="three"
+                id="three"
+              >
                 <div class="thumb-overlay"></div>
                 <img
                   src="../images/image-product-3-thumbnail.jpg"
                   alt=""
                   class="sub-img"
-                  id="prod-thumb-three"
                 />
               </div>
-              <div class="prod-thumb prod-thumb-four">
+              <div
+                class="prod-thumb prod-thumb-four"
+                data-number="four"
+                id="four"
+              >
                 <div class="thumb-overlay"></div>
                 <img
                   src="../images/image-product-4-thumbnail.jpg"
                   alt=""
                   class="sub-img"
-                  id="prod-thumb-four"
                 />
               </div>
             </div>
@@ -175,24 +242,6 @@
         <div class="cart-item">
           <p class="empty-cart">Your cart is empty</p>
         </div>
-        <!-- <div class="cart-item">
-          <img
-            src="../images/image-product-1-thumbnail.jpg"
-            alt=""
-            class="cart-img"
-          />
-          <div class="cart-details">
-            <p class="cart-item-name">Fall Limited Edition Sneakers</p>
-            <div class="cart-pricing">
-              <p class="cart-qty-details">
-                <span class="cart-item-price">$125.00</span> x
-                <span class="cart-item-qty">3</span>
-              </p>
-              <p class="cart-item-total">$375</p>
-            </div>
-          </div>
-          <img src="../images/icon-delete.svg" alt="" class="del-cart-item" />
-        </div> -->
         <p class="checkout hide-modal"><a href="#">Checkout</a></p>
       </div>
     </div>
@@ -229,12 +278,32 @@
                 ></path>
               </svg>
             </div>
-            <div class="main-img modal-main">
-              <img
-                src="../images/image-product-1.jpg"
-                alt=""
-                class="main-img-display"
-              />
+            <div class="main-imgs">
+              <!-- two main img...fix -->
+              <div class="main-img modal-main">
+                <div class="main-img main-modal-active">
+                  <img
+                    src="../images/image-product-1.jpg"
+                    alt=""
+                    class="main-img-display"
+                  />
+                  <img
+                    src="../images/image-product-2.jpg"
+                    alt=""
+                    class="main-img-display"
+                  />
+                  <img
+                    src="../images/image-product-3.jpg"
+                    alt=""
+                    class="main-img-display"
+                  />
+                  <img
+                    src="../images/image-product-4.jpg"
+                    alt=""
+                    class="main-img-display"
+                  />
+                </div>
+              </div>
             </div>
             <div class="next-container">
               <svg
@@ -252,40 +321,48 @@
             </div>
           </div>
           <div class="sub-imgs sub-modal-imgs">
-            <div class="prod-thumb prod-thumb-one active-slide">
+            <div
+              class="prod-thumb prod-thumb-one active-slide"
+              data-number="one"
+              id="one"
+            >
               <div class="thumb-overlay"></div>
               <img
                 src="../images/image-product-1-thumbnail.jpg"
                 alt=""
                 class="sub-img active"
-                id="prod-thumb-one"
               />
             </div>
-            <div class="prod-thumb prod-thumb-two">
+            <div class="prod-thumb prod-thumb-two" data-number="two" id="two">
               <div class="thumb-overlay"></div>
               <img
                 src="../images/image-product-2-thumbnail.jpg"
                 alt=""
                 class="sub-img"
-                id="prod-thumb-two"
               />
             </div>
-            <div class="prod-thumb prod-thumb-three">
+            <div
+              class="prod-thumb prod-thumb-three"
+              data-number="three"
+              id="three"
+            >
               <div class="thumb-overlay"></div>
               <img
                 src="../images/image-product-3-thumbnail.jpg"
                 alt=""
                 class="sub-img"
-                id="prod-thumb-three"
               />
             </div>
-            <div class="prod-thumb prod-thumb-four">
+            <div
+              class="prod-thumb prod-thumb-four"
+              data-number="four"
+              id="four"
+            >
               <div class="thumb-overlay"></div>
               <img
                 src="../images/image-product-4-thumbnail.jpg"
                 alt=""
                 class="sub-img"
-                id="prod-thumb-four"
               />
             </div>
           </div>

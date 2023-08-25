@@ -24,7 +24,7 @@ img{
     height: 100vh; 
 }
 
-nav,.nav-items,.cart-profile,.navbar{
+nav,.nav-items,.cart-profile,.navbar,.menu,.menu-logo{
     display: flex;
 }
 
@@ -92,7 +92,7 @@ nav{
 }
 
 .check-cart:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .profile{
@@ -137,21 +137,36 @@ main{
     display: flex;
     justify-content: center;
     width: 100%;
+    /* outline: 1px solid red; */
 }
 
 .right-container{
     width: 80%;   
 }
 
+.main-imgs{
+    /* outline: 1px solid red; */
+    width: 65%;
+    overflow: hidden;
+    margin: 0 auto 1.5rem;
+    border-radius: 1rem;
+}
+
 
 .main-img{    
     display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
+    justify-content: start;  
+    gap: 1rem;  
+    width: 100%;
+}
+
+.main-active{
+    transform: translateX(-0rem);
+    transition: all 200ms ease-in-out;
 }
 
 .main-img-display{
-    width: 65%;
+    width: 100%;
     border-radius: 1rem;
 }
 
@@ -269,6 +284,7 @@ main{
     cursor: pointer;
     font-weight: 500;
     font-size: .8em;
+    box-shadow: 0 15px 10px -8px rgba(255, 125, 26, 0.45);
 }
 
 .add-to-cart:hover{
@@ -350,7 +366,6 @@ main{
     display: flex;
     justify-content: space-between;
     padding: 1.2rem 1.4rem;
-    /* outline: 1px solid ; */
 }
 
 .cart-img{
@@ -388,6 +403,8 @@ main{
 
 
 /* product modal */
+
+
 
 .product-modal .left-container{
     width: 80%;
@@ -452,6 +469,7 @@ main{
     border-radius: 50%;
     stroke: #000;
     cursor: pointer;
+    z-index: 10;
 }
 
 .prev-container:hover, .next-container:hover{
@@ -473,3 +491,46 @@ main{
     margin-left: 5px;
 }
 
+.main-modal-active{
+    transform: translateX(-0rem);    
+    transition: all 200ms ease-in-out;
+}
+
+.menu{
+    display: none;
+}
+
+/* media queries */
+@media screen, (min-width: 350px) and (max-width: 500px){
+    .container{
+        width: 10%;
+    }
+    .menu{
+        display: block;
+    }
+    .menu-logo{
+        align-items: center;
+        outline: 1px solid red;
+    }
+    .nav-items{
+        display: none;
+    }
+    .logo>img{
+        width: 6rem;
+    }
+    .cart-profile{
+        gap: 1rem;
+        /* width: 100%; */
+        outline: 1px solid red;
+    }
+    main{
+        display: block;
+    }
+    .sub-imgs{
+        display: none;
+    }
+    .right-container{
+        width: 100vw;
+        outline: 1px solid red;
+    }
+}
