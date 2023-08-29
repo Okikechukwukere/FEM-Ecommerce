@@ -1,15 +1,10 @@
 const cartBtn = document.querySelector(".check-cart")
-const addToCart = document.querySelector(".add-to-cart")
-const increase = document.querySelector("#plus")
-const decrease = document.querySelector("#minus")
 const thumnails = document.querySelectorAll(".prod-thumb")
-const mainImage = document.querySelector(".main-img")
-const cartModal = document.querySelector(".cart-box")
+const cartModal = document.querySelector(".cart-modal")
 const lightBox = document.querySelector(".product-modal")
 const quantity = document.querySelector(".qty")
-const closeLightBox = document.querySelector(".close-modal")
-const next = document.querySelector(".next-container")
-const prev = document.querySelector(".prev-container")
+const next = document.querySelectorAll(".next-container")
+const prev = document.querySelectorAll(".prev-container")
 const cartQty = document.querySelector(".cart-qty-display")
 const cartItem = document.querySelector(".cart-item")
 const checkout = document.querySelector(".checkout")
@@ -18,43 +13,47 @@ const activeMainImg = document.querySelector(".main-active")
 const navItems = document.querySelectorAll(".nav-item")
 const navItem = document.querySelector(".nav-items")
 const menus = document.querySelector(".menu")
-const openMenu = document.querySelector(".open-menu")
-const closeMenu = document.querySelector(".close-menu")
-const menuOverlay = document.querySelector(".menu-overlay")
 
 // console.log(menus)
 menus.addEventListener("click", ()=>{
-  openMenu.classList.toggle('hide');
-  closeMenu.classList.toggle('hide');
+  document.querySelector(".open-menu").classList.toggle('hide');
+  document.querySelector(".close-menu").classList.toggle('hide');
   navItem.classList.toggle('toggle')
-  menuOverlay.classList.toggle('hide')
+  document.querySelector(".menu-overlay").classList.toggle('toggle')
 })
-mainImage.addEventListener('click', ()=>{
-    lightBox.classList.remove('hide-modal');
+document.querySelector(".main-img").addEventListener('click', ()=>{
+    lightBox.classList.add('show');
 })
 
-closeLightBox.addEventListener('click', ()=>{
-    lightBox.classList.add('hide-modal');
+document.querySelector(".close-modal").addEventListener('click', ()=>{
+    lightBox.classList.remove('show');
 })
 
 cartBtn.addEventListener('click', ()=>{
-    cartModal.classList.toggle('hide-modal');
-    cartModal.classList.contains('hide-modal') ? cartBtn.style.fill = '#a8afbf': cartBtn.style.fill = '#000';
+    cartModal.classList.toggle('off');
+    cartModal.classList.contains('off') ? cartBtn.style.fill = '#a8afbf': cartBtn.style.fill = '#000';
+    
+})
+window.addEventListener("click", (e)=>{
+  if(e.target !== cartBtn && e.target !== cartModal.children[0]){
+    cartModal.classList.add('off');
+    cartModal.classList.contains('off') ? cartBtn.style.fill = '#a8afbf': cartBtn.style.fill = '#000';
+  }
 })
 
-increase.addEventListener('click', ()=>{
+document.querySelector("#plus").addEventListener('click', ()=>{
     quantity.textContent++;
 })
 
-decrease.addEventListener('click', ()=>{
+document.querySelector("#minus").addEventListener('click', ()=>{
     if (quantity.textContent > 0){
         quantity.textContent--;
     };
 })
 
-addToCart.addEventListener('click', ()=>{
+document.querySelector(".add-to-cart").addEventListener('click', ()=>{
     if(quantity.textContent > 0){
-        cartQty.classList.remove('hide-modal');
+        cartQty.classList.remove('hide');
         cartQty.textContent = quantity.textContent;
         quantity.textContent = 0;
 
@@ -76,12 +75,12 @@ addToCart.addEventListener('click', ()=>{
         </div>
         <img src="../images/icon-delete.svg" alt="" class="del-cart-item" />`;
 
-        checkout.classList.remove("hide-modal");
+        checkout.classList.remove("hide");
 
         document.querySelector('.del-cart-item').addEventListener("click", ()=>{
-                cartQty.classList.add("hide-modal");
+                cartQty.classList.add("hide");
                 cartItem.innerHTML = `<p class="empty-cart">Your cart is empty</p>`;
-                checkout.classList.add("hide-modal");
+                checkout.classList.add("hide");
         })
     }
 })
@@ -102,14 +101,14 @@ thumnails.forEach(thumbnail=>{
       activeLightBox.style.transform = 'translateX(0)';
       activeMainImg.style.transform = 'translateX(0)';
     } else if(thumbnail.id === 'two'){
-      activeLightBox.style.transform = 'translateX(-104%)';
-      activeMainImg.style.transform = 'translateX(-104%)';
+      activeLightBox.style.transform = 'translateX(-100%)';
+      activeMainImg.style.transform = 'translateX(-100%)';
     }else if(thumbnail.id === 'three'){          
-      activeLightBox.style.transform = 'translateX(-208%)';
-      activeMainImg.style.transform = 'translateX(-208%)';
+      activeLightBox.style.transform = 'translateX(-200%)';
+      activeMainImg.style.transform = 'translateX(-200%)';
     }else if(thumbnail.id === 'four'){      
-      activeLightBox.style.transform = 'translateX(-312%)';
-      activeMainImg.style.transform = 'translateX(-312%)';
+      activeLightBox.style.transform = 'translateX(-300%)';
+      activeMainImg.style.transform = 'translateX(-300%)';
     }
 
   })
@@ -117,15 +116,19 @@ thumnails.forEach(thumbnail=>{
 
 let curImg = 0;
 
-prev.addEventListener('click', ()=>{
-  curImg--;
-  updateSlide();
+prev.forEach(prevBtn=>{
+  prevBtn.addEventListener('click', ()=>{
+    curImg--;
+    updateSlide();
+  })
+})
+next.forEach(nextBtn=>{
+  nextBtn.addEventListener('click', ()=>{
+    curImg++;
+    updateSlide();
+  })
 })
 
-next.addEventListener('click', ()=>{
-  curImg++;
-  updateSlide();
-})
 
 let updateSlide = ()=>{
   if(curImg <0){
@@ -134,8 +137,8 @@ let updateSlide = ()=>{
         curImg = 0;
     }
 
-  activeLightBox.style.transform = `translateX(-${curImg * 104}%)`;
-  activeMainImg.style.transform = `translateX(-${curImg * 104}%)`;
+  activeLightBox.style.transform = `translateX(-${curImg * 100}%)`;
+  activeMainImg.style.transform = `translateX(-${curImg * 100}%)`;
 
   thumnails.forEach(thumbnail=>{
     thumbnail.classList.remove('active-slide');
@@ -148,11 +151,3 @@ let updateSlide = ()=>{
     })
 }
 
-// navItems.forEach(navItem=>{
-//   navItem.addEventListener('click', ()=>{
-//     navItems.forEach(item=> {
-//       item.style.color = '#807e7e';
-//     });
-//       navItem.style.color = '#000';
-//   })
-// })
