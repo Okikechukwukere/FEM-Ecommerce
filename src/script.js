@@ -34,11 +34,12 @@ cartBtn.addEventListener('click', ()=>{
     cartModal.classList.contains('off') ? cartBtn.style.fill = '#a8afbf': cartBtn.style.fill = '#000';
     
 })
-window.addEventListener("click", (e)=>{
-  if(e.target !== cartBtn && e.target !== cartModal.children[0]){
+document.querySelector(".container").addEventListener("click", (e)=>{
+  if(e.target !== cartBtn ){
     cartModal.classList.add('off');
     cartModal.classList.contains('off') ? cartBtn.style.fill = '#a8afbf': cartBtn.style.fill = '#000';
   }
+  console.log(e.target)
 })
 
 document.querySelector("#plus").addEventListener('click', ()=>{
